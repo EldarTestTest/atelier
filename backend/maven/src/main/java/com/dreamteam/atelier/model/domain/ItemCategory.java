@@ -1,13 +1,22 @@
 package com.dreamteam.atelier.model.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.UUID;
 
 /**
  * Базовый тип описывающий сущность - категория товара(обувь одежда новинки итд)
  */
+@Document(collection = "itemCategories")
+@TypeAlias(value = "itemCategory")
 public class ItemCategory {
 
+    @Id
     private String id;
+    @Indexed(unique = true)
     private UUID uuid;
     private String name;
     private String description;

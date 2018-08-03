@@ -1,13 +1,23 @@
 package com.dreamteam.atelier.model.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.UUID;
 
 /**
  * Базовый тип описывающий сущность - пользователь
  */
+@Document(collection = "users")
+@TypeAlias(value = "user")
 public class User {
 
+    @Id
     private String id;
+    @Indexed(unique = true)
     private UUID uuid;
     private String login;
     private String password;
@@ -16,10 +26,14 @@ public class User {
     private String surname;
     private String middlename;
     private String nikname;
+    @DBRef
     private Basket basket;
+    @DBRef
     private Favorite favorite;
+    @DBRef
     private CommonFile avatar;
     private String mobile;
+    @DBRef
     private UserAddress userAddress;
 
     public String getId() {

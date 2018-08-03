@@ -1,5 +1,11 @@
 package com.dreamteam.atelier.model.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -7,19 +13,27 @@ import java.util.UUID;
 /**
  * Базовый тип который описывает сущность - товар
  */
+@Document(collection = "items")
+@TypeAlias(value = "item")
 public class Item {
 
+    @Id
     private String id;
+    @Indexed(unique = true)
     private UUID uuid;
     private String name; //наименование
     private String description; //описание
+    @DBRef
     private List<CommonFile> commonFiles; //файлы-фоточки
     private List<String> dimensions; //размеры
     private Double price; //цена
     private LocalDateTime createDate; //дата создания
     private Integer sale; //скидка
+    @DBRef
     private List<ItemCategory> itemCategory; //катеории товара
+    @DBRef
     private List<ItemType> itemType; //типы товара
+    @DBRef
     private Season season;
 
     public String getId() {
