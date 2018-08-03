@@ -15,17 +15,18 @@ import java.util.UUID;
 public class Season {
 
     @Id
-    private String id;
+    private long id;
     @Indexed(unique = true)
     private UUID uuid;
+    @Indexed(unique = true)
     private String name;
     private String description;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

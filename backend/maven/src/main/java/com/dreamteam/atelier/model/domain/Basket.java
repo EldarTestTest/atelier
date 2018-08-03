@@ -17,18 +17,18 @@ import java.util.UUID;
 public class Basket {
 
     @Id
-    private String id;
+    private long id;
     @Indexed(unique = true)
     private UUID uuid;
     @DBRef
     private List<Item> items;
     private Integer price;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

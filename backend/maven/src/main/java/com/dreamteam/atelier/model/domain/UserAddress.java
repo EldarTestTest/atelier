@@ -15,7 +15,7 @@ import java.util.UUID;
 public class UserAddress {
 
     @Id
-    private String id;
+    private long id;
     @Indexed(unique = true)
     private UUID uuid;
     private String region;
@@ -25,11 +25,11 @@ public class UserAddress {
     private String flat;
     private String description; //дополнительное описание
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

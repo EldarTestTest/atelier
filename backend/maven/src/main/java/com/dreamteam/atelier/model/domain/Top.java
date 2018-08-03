@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Top {
 
     @Id
-    private String id;
+    private long id;
     @Indexed(unique = true)
     private UUID uuid;
     private Integer value; //значение рейтинга
@@ -25,11 +25,11 @@ public class Top {
     @DBRef
     private User user; //пользователь
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
