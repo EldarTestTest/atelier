@@ -27,11 +27,12 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/securityNone").permitAll()
-                .anyRequest().authenticated()
+        http
+                .authorizeRequests()
+                    .antMatchers("/","/securityNone","/api/mail/testMessage","/api/**").permitAll()
+                    .anyRequest().authenticated()
                 .and()
-                .httpBasic()
+                    .httpBasic()
                 .authenticationEntryPoint(authenticationEntryPoint);
 
         /*http.addFilterAfter(new CustomFilter(),
