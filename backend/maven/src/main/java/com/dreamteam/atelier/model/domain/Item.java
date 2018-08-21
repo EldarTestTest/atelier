@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -18,7 +19,7 @@ import java.util.UUID;
 public class Item {
 
     @Id
-    private long id;
+    private String id;
     @Indexed(unique = true)
     private UUID uuid;
     private String name; //наименование
@@ -36,11 +37,11 @@ public class Item {
     @DBRef
     private Season season;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

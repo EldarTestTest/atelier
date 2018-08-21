@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 import java.util.List;
 import java.util.UUID;
 
@@ -17,17 +18,17 @@ import java.util.UUID;
 public class Favorite {
 
     @Id
-    private long id;
+    private String id;
     @Indexed(unique = true)
     private UUID uuid;
     @DBRef
     private List<Item> items;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

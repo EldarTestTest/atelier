@@ -1,3 +1,4 @@
+/*
 package com.dreamteam.atelier.controller.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,18 +30,20 @@ public class CustomWebSecurityConfigurerAdapter extends WebSecurityConfigurerAda
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/","/securityNone","/api/mail/testMessage","/api/**").permitAll()
+                    .antMatchers("/securityNone","/api/mail/testMessage","/api/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .httpBasic()
                 .authenticationEntryPoint(authenticationEntryPoint);
 
-        /*http.addFilterAfter(new CustomFilter(),
-                BasicAuthenticationFilter.class);*/
+        */
+/*http.addFilterAfter(new CustomFilter(),
+                BasicAuthenticationFilter.class);*//*
+
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-}
+}*/

@@ -5,11 +5,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.UUID;
 
-public interface UserAddressRepository extends MongoRepository<UserAddress, Long> {
+public interface UserAddressRepository extends MongoRepository<UserAddress, String> {
 
-    UserAddress findUserAddressByIdAndUuid(long id, UUID uuid);
+    UserAddress findUserAddressByIdAndUuid(String id, UUID uuid);
 
-    UserAddress findUserAddressById(long id);
+    UserAddress findUserAddressById(String id);
 
     UserAddress findUserAddressByUuid(UUID uuid);
 

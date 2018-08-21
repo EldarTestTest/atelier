@@ -8,11 +8,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface TopRepository extends MongoRepository<Top, Long> {
+public interface TopRepository extends MongoRepository<Top, String> {
 
-    Top findTopByIdAndUuid(long id, UUID uuid);
+    Top findTopByIdAndUuid(String id, UUID uuid);
 
-    Top findTopById(long id);
+    Top findTopById(String id);
 
     Top findTopByUuid(UUID uuid);
 

@@ -5,11 +5,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.UUID;
 
-public interface BasketRepository extends MongoRepository<Basket, Long> {
+public interface BasketRepository extends MongoRepository<Basket, String> {
 
-    Basket findBasketByIdAndUuid(long id, UUID uuid);
+    Basket findBasketByIdAndUuid(String id, UUID uuid);
 
-    Basket findBasketById(long id);
+    Basket findBasketById(String id);
 
     Basket findBasketByUuid(UUID uuid);
 

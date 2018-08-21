@@ -5,13 +5,13 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.UUID;
 
-public interface ItemCategoryRepository extends MongoRepository<ItemCategory, Long> {
+public interface ItemCategoryRepository extends MongoRepository<ItemCategory, String> {
 
-    ItemCategory findAllById(long id);
+    ItemCategory findAllById(String id);
 
     ItemCategory findAllByUuid(UUID uuid);
 
-    ItemCategory findAllByIdAndUuid(long id, UUID uuid);
+    ItemCategory findAllByIdAndUuid(String id, UUID uuid);
 
     ItemCategory findAllByName(String name);
 

@@ -7,11 +7,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface UserRepository extends MongoRepository<User, Long> {
+public interface UserRepository extends MongoRepository<User, String> {
 
-    User findUserByIdAndUuid(long id, UUID uuid);
+    User findUserByIdAndUuid(String id, UUID uuid);
 
-    User findUserById(long id);
+    User findUserById(String id);
 
     User findUserByUuid(UUID uuid);
 
