@@ -7,12 +7,12 @@ import java.util.UUID;
 
 public interface SeasonRepository extends MongoRepository<Season, String> {
 
-    Season findAllById(String id);
+    Season findSeasonById(String id);
 
-    Season findAllByUuid(UUID uuid);
+    Season findSeasonByUuid(UUID uuid);
 
-    Season findAllByIdAndUuid(String id, UUID uuid);
+    Season findSeasonByIdAndUuid(String id, UUID uuid);
 
-    Season findAllByName(String name);
+    Season findSeasonByName(String name);
 
 }
