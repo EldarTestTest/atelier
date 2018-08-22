@@ -7,10 +7,10 @@ import java.util.UUID;
 
 public interface FavoriteRepository extends MongoRepository<Favorite, String> {
 
-    Favorite findAllById(String id);
+    Favorite findFavoriteById(String id);
 
-    Favorite findAllByUuid(UUID uuid);
+    Favorite findFavoriteByUuid(UUID uuid);
 
-    Favorite findAllByIdAndUuid(String id, UUID uuid);
+    Favorite findFavoriteByIdAndUuid(String id, UUID uuid);
 
 }

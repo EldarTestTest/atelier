@@ -34,34 +34,26 @@ public class FilesService {
 
     public SystemFile getSystemFileById(String id) {
         CommonFile commonFileById = commonFileRepository.findCommonFileById(id);
-        SystemFile systemFile = new SystemFile();
-        systemFile.setId(commonFileById.getId());
-        systemFile.setUuid(commonFileById.getUuid());
-        systemFile.setName(commonFileById.getName());
-        systemFile.setLink(commonFileById.getLink());
-        return systemFile;
+        return commonFileById != null ? createSystemFile(commonFileById) : new SystemFile();
     }
 
     public SystemFile getSystemFileByUuid(UUID uuid) {
         CommonFile commonFileByUuid = commonFileRepository.findCommonFileByUuid(uuid);
+        return commonFileByUuid != null ? createSystemFile(commonFileByUuid) : new SystemFile();
+    }
+
+    private SystemFile createSystemFile(CommonFile commonFile) {
         SystemFile systemFile = new SystemFile();
-        systemFile.setId(commonFileByUuid.getId());
-        systemFile.setUuid(commonFileByUuid.getUuid());
-        systemFile.setName(commonFileByUuid.getName());
-        systemFile.setLink(commonFileByUuid.getLink());
+        systemFile.setId(commonFile.getId());
+        systemFile.setUuid(commonFile.getUuid());
+        systemFile.setName(commonFile.getName());
+        systemFile.setLink(commonFile.getLink());
         return systemFile;
     }
 
     public List<SystemFile> getSystemFilesByName(String name) {
         return commonFileRepository.findCommonFileByName(name)
-                .stream().map(commonFile -> {
-                    SystemFile systemFile = new SystemFile();
-                    systemFile.setId(commonFile.getId());
-                    systemFile.setUuid(commonFile.getUuid());
-                    systemFile.setName(commonFile.getName());
-                    systemFile.setLink(commonFile.getLink());
-                    return systemFile;
-                }).collect(Collectors.toList());
+                .stream().map(this::createSystemFile).collect(Collectors.toList());
     }
 
     public CommonFile saveFile(String fileName, String fileLink, byte[] fileData) {

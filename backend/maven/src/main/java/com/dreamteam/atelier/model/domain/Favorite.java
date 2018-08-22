@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,7 +42,23 @@ public class Favorite {
     }
 
     public List<Item> getItems() {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
         return items;
+    }
+
+    public void addItem(Item item) {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
+        items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        if (items != null) {
+            items.remove(item);
+        }
     }
 
     public void setItems(List<Item> items) {
