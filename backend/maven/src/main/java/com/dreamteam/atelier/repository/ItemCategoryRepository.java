@@ -7,12 +7,12 @@ import java.util.UUID;
 
 public interface ItemCategoryRepository extends MongoRepository<ItemCategory, String> {
 
-    ItemCategory findAllById(String id);
+    ItemCategory findItemCategoryById(String id);
 
-    ItemCategory findAllByUuid(UUID uuid);
+    ItemCategory findItemCategoryByUuid(UUID uuid);
 
-    ItemCategory findAllByIdAndUuid(String id, UUID uuid);
+    ItemCategory findItemCategoryByIdAndUuid(String id, UUID uuid);
 
-    ItemCategory findAllByName(String name);
+    ItemCategory findItemCategoryByName(String name);
 
 }
