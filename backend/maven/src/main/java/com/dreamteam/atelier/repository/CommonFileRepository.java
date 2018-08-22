@@ -6,13 +6,13 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface CommonFileRepository extends MongoRepository<CommonFile, Long> {
+public interface CommonFileRepository extends MongoRepository<CommonFile, String> {
 
-    CommonFile findCommonFileById(long id);
+    CommonFile findCommonFileById(String id);
 
     CommonFile findCommonFileByUuid(UUID uuid);
 
-    CommonFile findCommonFileByIdAndUuid(long id, UUID uuid);
+    CommonFile findCommonFileByIdAndUuid(String id, UUID uuid);
 
     List<CommonFile> findCommonFileByName(String name);
 

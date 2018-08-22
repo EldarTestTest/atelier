@@ -5,12 +5,12 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.UUID;
 
-public interface FavoriteRepository extends MongoRepository<Favorite, Long> {
+public interface FavoriteRepository extends MongoRepository<Favorite, String> {
 
-    Favorite findAllById(long id);
+    Favorite findFavoriteById(String id);
 
-    Favorite findAllByUuid(UUID uuid);
+    Favorite findFavoriteByUuid(UUID uuid);
 
-    Favorite findAllByIdAndUuid(long id, UUID uuid);
+    Favorite findFavoriteByIdAndUuid(String id, UUID uuid);
 
 }

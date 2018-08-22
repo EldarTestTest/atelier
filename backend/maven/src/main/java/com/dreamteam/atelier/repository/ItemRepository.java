@@ -9,11 +9,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface ItemRepository extends MongoRepository<Item, Long> {
+public interface ItemRepository extends MongoRepository<Item, String> {
 
-    Item findItemByIdAndUuid(long id, UUID uuid);
+    Item findItemByIdAndUuid(String id, UUID uuid);
 
-    Item findItemById(long id);
+    Item findItemById(String id);
 
     Item findItemByUuid(UUID uuid);
 

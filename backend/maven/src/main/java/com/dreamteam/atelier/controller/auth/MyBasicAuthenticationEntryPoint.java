@@ -1,3 +1,4 @@
+/*
 package com.dreamteam.atelier.controller.auth;
 
 import org.springframework.security.core.AuthenticationException;
@@ -27,4 +28,4 @@ public class MyBasicAuthenticationEntryPoint extends BasicAuthenticationEntryPoi
         setRealmName("Baeldung");
         super.afterPropertiesSet();
     }
-}
+}*/

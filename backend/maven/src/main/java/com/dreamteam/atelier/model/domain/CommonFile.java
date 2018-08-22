@@ -15,18 +15,18 @@ import java.util.UUID;
 public class CommonFile {
 
     @Id
-    private long id;
+    private String id;
     @Indexed(unique = true)
     private UUID uuid;
     private String name; //наименование файла
     private String link; //ссылка на файл если таковой есть
     private byte[] bytes; //байты файла
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

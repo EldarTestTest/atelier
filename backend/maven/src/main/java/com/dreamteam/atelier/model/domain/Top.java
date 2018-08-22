@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 import java.util.UUID;
 
 /**
@@ -16,7 +17,7 @@ import java.util.UUID;
 public class Top {
 
     @Id
-    private long id;
+    private String id;
     @Indexed(unique = true)
     private UUID uuid;
     private Integer value; //значение рейтинга
@@ -25,11 +26,11 @@ public class Top {
     @DBRef
     private User user; //пользователь
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

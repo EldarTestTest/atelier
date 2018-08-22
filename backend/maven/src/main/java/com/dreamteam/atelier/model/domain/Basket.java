@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,18 +18,18 @@ import java.util.UUID;
 public class Basket {
 
     @Id
-    private long id;
+    private String id;
     @Indexed(unique = true)
     private UUID uuid;
     @DBRef
     private List<Item> items;
     private Integer price;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -41,7 +42,24 @@ public class Basket {
     }
 
     public List<Item> getItems() {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
         return items;
+    }
+
+    public void addItem(Item item){
+        if (items == null) {
+            items = new ArrayList<>();
+        }
+        items.add(item);
+    }
+
+    public void removeItem(Item item){
+        if (items == null) {
+            return;
+        }
+        items.remove(item);
     }
 
     public void setItems(List<Item> items) {
