@@ -7,7 +7,9 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
+import java.awt.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -70,6 +72,9 @@ public class Item {
     }
 
     public List<CommonFile> getCommonFiles() {
+        if (commonFiles == null) {
+            commonFiles = new ArrayList<>();
+        }
         return commonFiles;
     }
 
@@ -77,12 +82,41 @@ public class Item {
         this.commonFiles = commonFiles;
     }
 
+    public void addCommonFile(CommonFile commonFile) {
+        if (commonFiles == null) {
+            commonFiles = new ArrayList<>();
+        }
+        commonFiles.add(commonFile);
+    }
+
+    public void removeCommonFile(CommonFile commonFile) {
+        if (commonFiles != null) {
+            commonFiles.remove(commonFile);
+        }
+    }
+
     public List<String> getDimensions() {
+        if (dimensions == null) {
+            dimensions = new ArrayList<>();
+        }
         return dimensions;
     }
 
     public void setDimensions(List<String> dimensions) {
         this.dimensions = dimensions;
+    }
+
+    public void addDimensions(String dimension) {
+        if (dimensions == null) {
+            dimensions = new ArrayList<>();
+        }
+        dimensions.add(dimension);
+    }
+
+    public void removeDimensions(String dimension) {
+        if (dimensions != null) {
+            dimensions.remove(dimension);
+        }
     }
 
     public Double getPrice() {
@@ -117,12 +151,38 @@ public class Item {
         this.itemCategory = itemCategory;
     }
 
+    public void addItemCategory(ItemCategory itemCat) {
+        if (itemCategory == null) {
+            itemCategory = new ArrayList<>();
+        }
+        itemCategory.add(itemCat);
+    }
+
+    public void removeItemCategory(ItemCategory itemCat) {
+        if (itemCategory != null) {
+            itemCategory.remove(itemCat);
+        }
+    }
+
     public List<ItemType> getItemType() {
         return itemType;
     }
 
     public void setItemType(List<ItemType> itemType) {
         this.itemType = itemType;
+    }
+
+    public void addItemType(ItemType itemTyp) {
+        if (itemType == null) {
+            itemType = new ArrayList<>();
+        }
+        itemType.add(itemTyp);
+    }
+
+    public void removeItemType(ItemType itemTyp) {
+        if (itemType != null) {
+            itemType.remove(itemTyp);
+        }
     }
 
     public Season getSeason() {

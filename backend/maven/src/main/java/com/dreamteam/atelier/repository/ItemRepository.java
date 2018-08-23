@@ -17,22 +17,24 @@ public interface ItemRepository extends MongoRepository<Item, String> {
 
     Item findItemByUuid(UUID uuid);
 
-    List<Item> findAllByName(String name);
+    List<Item> findItemByName(String name);
 
-    List<Item> findAllByDimensionsContains(List<String> dimensions);
+    List<Item> findItemByDimensionsContains(List<String> dimensions);
 
-    List<Item> findAllBySale(Integer sale);
+    List<Item> findItemBySale(Integer sale);
 
-    List<Item> findAllBySaleBetween(Integer sale, Integer sale2);
+    List<Item> findItemBySaleBetween(Integer sale, Integer sale2);
 
-    List<Item> findAllByItemCategory(List<ItemCategory> itemCategory);
+    List<Item> findItemByPriceBetween(Double price, Double price2);
 
-    List<Item> findAllByItemCategoryContains(List<ItemCategory> itemCategory);
+    List<Item> findItemByItemCategory(List<ItemCategory> itemCategory);
 
-    List<Item> findAllByItemType(List<ItemType> itemType);
+    List<Item> findItemByItemCategoryContains(List<ItemCategory> itemCategory);
 
-    List<Item> findAllByItemTypeContains(List<ItemType> itemType);
+    List<Item> findItemByItemType(List<ItemType> itemType);
 
-    List<Item> findAllBySeason(Season season);
+    List<Item> findItemByItemTypeContains(List<ItemType> itemType);
+
+    List<Item> findItemBySeason(Season season);
 
 }
