@@ -225,6 +225,10 @@ public class ItemService {
         itemRepository.delete(itemById);
     }
 
+    public List<Item> getAllItems(){
+        return itemRepository.findAll();
+    }
+
     public Item getItemById(String id) {
         return itemRepository.findItemById(id);
     }
@@ -233,17 +237,16 @@ public class ItemService {
         return itemRepository.findItemByUuid(uuid);
     }
 
-
     public List<Item> getItemsByTypes(List<String> types) {
         List<ItemType> collect = types.stream()
                 .map(itemTypeRepository::findItemTypeById).collect(Collectors.toList());
-        return itemRepository.findItemByItemType(collect);
+        return itemRepository.findItemByItemTypeContains(collect);
     }
 
     public List<Item> getItemsByCategories(List<String> categories) {
         List<ItemCategory> collect = categories.stream()
                 .map(itemCategoryRepository::findItemCategoryById).collect(Collectors.toList());
-        return itemRepository.findItemByItemCategory(collect);
+        return itemRepository.findItemByItemCategoryContains(collect);
     }
 
     public List<Item> getItemsBySeasons(String seasonId) {

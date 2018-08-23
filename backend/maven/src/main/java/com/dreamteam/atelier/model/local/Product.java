@@ -18,8 +18,12 @@ public class Product {
     private List<String> commonFilesId; //файлы-фоточки
     private List<String> dimensions; //размеры
     private Double price; //цена
+    private Double minPrice; //цена
+    private Double maxPrice; //цена
     private LocalDateTime createDate; //дата создания
     private Integer sale; //скидка
+    private Integer minSale; //скидка
+    private Integer maxSale; //скидка
     private List<String> itemCategoryId; //катеории товара
     private List<String> itemTypeId; //типы товара
     private String seasonId;
