@@ -15,28 +15,28 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     User findUserByUuid(UUID uuid);
 
-    User findAllByEmail(String email);
+    User findUserByEmail(String email);
 
-    User findAllByLogin(String login);
+    User findUserByLogin(String login);
 
-    User findAllByNikname(String nikname);
+    User findUserByNikname(String nikname);
 
-    User findAllByMobile(String mobile);
+    User findUserByMobile(String mobile);
 
-    User findAllByUserAddress(UserAddress userAddress);
+    User findUserByUserAddress(UserAddress userAddress);
 
-    List<User> findAllByName(String name);
+    List<User> findUserByName(String name);
 
-    List<User> findAllBySurname(String surname);
+    List<User> findUserBySurname(String surname);
 
-    List<User> findAllByMiddlename(String middlename);
+    List<User> findUserByMiddlename(String middlename);
 
-    List<User> findAllByNameAndSurname(String name, String surname);
+    List<User> findUserByNameAndSurname(String name, String surname);
 
-    List<User> findAllByNameAndMiddlename(String name, String middlename);
+    List<User> findUserByNameAndMiddlename(String name, String middlename);
 
-    List<User> findAllByNameAndSurnameAndMiddlename(String name, String surname, String middlename);
+    List<User> findUserByNameAndSurnameAndMiddlename(String name, String surname, String middlename);
 
-    User findAllByPassword(String password); //честно говоря этот метод запрещено юзаять, только для тестов
+    User findUserByPassword(String password); //честно говоря этот метод запрещено юзаять, только для тестов
 
 }
