@@ -7,8 +7,8 @@
 </template>
 
 <script>
-  import LoginForm from "./LoginForm"
-  import SuccessMessage from "./SuccessMessage"
+  import LoginForm from "../LoginForm"
+  import SuccessMessage from "../SuccessMessage"
 
   export default {
     components: {
