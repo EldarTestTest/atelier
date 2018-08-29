@@ -1,5 +1,7 @@
 <template>
-  <div class="container">fsadfsd</div>
+  <div class="container">
+    <p>sdfasdf</p>
+  </div>
 </template>
 
 <script>
@@ -11,8 +13,6 @@
 <style scoped>
   .container {
     margin: 0 auto;
-    width: 1206px;
     height: 40px;
-    border-color: chartreuse;
   }
 </style>

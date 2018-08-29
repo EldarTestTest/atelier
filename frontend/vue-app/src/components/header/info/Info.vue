@@ -5,13 +5,13 @@
 </template>
 
 <script>
-  import Container from "./container/Container"
+  import Container from "../info/container/Container"
 
   export default {
     name: "info",
-    components : [
+    components: {
       Container
-    ]
+    }
   }
 </script>
 

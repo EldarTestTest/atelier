@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <info/>
+  <div class="app">
+    <header-app/>
     <h2>Hello World!</h2>
     <login-form/>
     <success-message/>
@@ -10,13 +10,13 @@
 <script>
   import LoginForm from "../LoginForm"
   import SuccessMessage from "../SuccessMessage"
-  import Info from "../header/info/Info"
+  import HeaderApp from "../header/HeaderApp"
 
   export default {
     components: {
       LoginForm,
       SuccessMessage,
-      Info
+      HeaderApp
     }
   }
 </script>
@@ -25,5 +25,9 @@
   body {
     margin: 0 auto;
     min-height: 100%;
+  }
+  .app {
+    margin: 0 auto;
+    width: 100%;
   }
 </style>
