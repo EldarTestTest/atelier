@@ -1,22 +1,14 @@
 <template>
-  <div class="app">
-    <header-app/>
-    <h2>Hello World!</h2>
-    <login-form/>
-    <success-message/>
-  </div>
+  <v-app>
+  </v-app>
 </template>
 
 <script>
-  import LoginForm from "../LoginForm"
-  import SuccessMessage from "../SuccessMessage"
-  import HeaderApp from "../header/HeaderApp"
 
+  import VApp from "vuetify/src/components/VApp/VApp";
   export default {
     components: {
-      LoginForm,
-      SuccessMessage,
-      HeaderApp
+      VApp
     }
   }
 </script>

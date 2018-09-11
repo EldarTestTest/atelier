@@ -2,11 +2,17 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './components/app/App'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import 'babel-polyfill'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 
 Vue.config.productionTip = false;
 
 export const eventBus = new Vue();
+
+Vue.use(Vuetify);
 
 new Vue({
   el: '#app',
