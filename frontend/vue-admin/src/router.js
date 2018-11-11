@@ -1,16 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Main from './page/Main'
+import SignIn from './page/SignIn'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    }
-  ],
+    routes: [
+        {
+            path: '/',
+            redirect: '/login'
+        },
+        {
+            path: '/login',
+            name: 'sing-in',
+            component: SignIn
+        },
+        {
+            path: '/logout',
+            redirect: () => '/' //todo тут будет функция которая очищает token и редиректит на логин
+        },
+        {
+            path: '/admin',
+            name: 'main',
+            component: Main,
+            children: [
+
+            ]
+        }
+    ],
     mode: 'history'
 })

@@ -2,8 +2,7 @@
     <div>
         <v-navigation-drawer :clipped="clipped" v-model="drawer" app>
             <v-list>
-                <!--eslint-disable-next-line-->
-                <v-list-tile v-for="(item, i) in menuItems" :key="`menuItem{i}`">
+                <v-list-tile v-for="(item, i) in menuItems" :key="`menuItem ${i}`">
                     <v-list-tile-action>
                         <v-icon v-html="item.icon"></v-icon>
                     </v-list-tile-action>
