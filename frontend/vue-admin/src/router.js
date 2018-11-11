@@ -9,8 +9,8 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {
-            path: '/',
-            redirect: '/login'
+            path: '',
+            redirect: 'login'
         },
         {
             path: '/login',
@@ -26,6 +26,10 @@ export default new Router({
             name: 'main',
             component: Main,
             children: [
+                {
+                    path: 'logout',
+                    redirect: () => '/' //todo тут будет функция которая очищает token и редиректит на логин
+                },
                 {
                     path: "",
                     redirect: 'profile'
