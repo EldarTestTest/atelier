@@ -45,6 +45,7 @@
         },
         methods: {
             loginHandler: function () {
+                //todo тут необходимо переписать на oauth2 login
                 if (this.userName === 'root' && this.password === 'root') {
                     this.wrong = false;
                     this.$router.push('/admin');

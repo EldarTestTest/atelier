@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from './page/Main'
 import SignIn from './page/SignIn'
+import Profile from './views/Profile'
 
 Vue.use(Router)
 
@@ -25,7 +26,15 @@ export default new Router({
             name: 'main',
             component: Main,
             children: [
-
+                {
+                    path: "",
+                    redirect: 'profile'
+                },
+                {
+                    path: 'profile',
+                    name: 'profile',
+                    component: Profile,
+                }
             ]
         }
     ],
