@@ -1,12 +1,12 @@
 package com.dreamteam.atelier.model.local;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
-@Getter
-@Setter
+@Data
+@RequiredArgsConstructor
+@EqualsAndHashCode
 public class SystemFile {
 
     private String id;

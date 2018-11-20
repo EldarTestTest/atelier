@@ -2,7 +2,7 @@ package com.dreamteam.atelier.controller.rest;
 
 import com.dreamteam.atelier.model.domain.ItemType;
 import com.dreamteam.atelier.model.local.ProductType;
-import com.dreamteam.atelier.service.ItemTypeService;
+import com.dreamteam.atelier.service.domain.ItemTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

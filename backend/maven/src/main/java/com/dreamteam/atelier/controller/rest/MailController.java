@@ -1,7 +1,7 @@
 package com.dreamteam.atelier.controller.rest;
 
 import com.dreamteam.atelier.model.local.MessageMail;
-import com.dreamteam.atelier.service.MailSender;
+import com.dreamteam.atelier.service.domain.MailSender;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

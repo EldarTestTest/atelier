@@ -2,7 +2,7 @@ package com.dreamteam.atelier.controller.rest;
 
 import com.dreamteam.atelier.model.domain.CommonFile;
 import com.dreamteam.atelier.model.local.SystemFile;
-import com.dreamteam.atelier.service.FilesService;
+import com.dreamteam.atelier.service.domain.FilesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

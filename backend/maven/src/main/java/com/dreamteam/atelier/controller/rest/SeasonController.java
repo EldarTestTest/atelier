@@ -2,7 +2,7 @@ package com.dreamteam.atelier.controller.rest;
 
 import com.dreamteam.atelier.model.domain.Season;
 import com.dreamteam.atelier.model.local.ProductSeason;
-import com.dreamteam.atelier.service.SeasonService;
+import com.dreamteam.atelier.service.domain.SeasonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

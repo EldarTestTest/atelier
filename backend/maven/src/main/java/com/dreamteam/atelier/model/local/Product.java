@@ -1,14 +1,14 @@
 package com.dreamteam.atelier.model.local;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@Getter
-@Setter
+@EqualsAndHashCode
+@Data
+@RequiredArgsConstructor
 public class Product {
 
     private String id;

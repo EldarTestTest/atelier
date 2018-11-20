@@ -2,7 +2,7 @@ package com.dreamteam.atelier.controller.rest;
 
 import com.dreamteam.atelier.model.domain.Favorite;
 import com.dreamteam.atelier.model.local.UserFavorite;
-import com.dreamteam.atelier.service.FavoriteService;
+import com.dreamteam.atelier.service.domain.FavoriteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

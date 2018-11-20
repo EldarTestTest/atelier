@@ -25,6 +25,13 @@ spring:
     port: 465
     protocol: smtps
 
+  security:
+    oauth2:
+      client:
+        registration:
+          uaa:
+            client-id:
+
 
 
 ---

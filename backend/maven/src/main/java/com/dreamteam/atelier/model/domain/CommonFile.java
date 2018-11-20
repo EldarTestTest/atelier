@@ -1,5 +1,8 @@
 package com.dreamteam.atelier.model.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -12,6 +15,9 @@ import java.util.UUID;
  */
 @Document(collection = "commonFiles")
 @TypeAlias(value = "commonFile")
+@Data
+@EqualsAndHashCode
+@RequiredArgsConstructor
 public class CommonFile {
 
     @Id
@@ -22,43 +28,4 @@ public class CommonFile {
     private String link; //ссылка на файл если таковой есть
     private byte[] bytes; //байты файла
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public byte[] getBytes() {
-        return bytes;
-    }
-
-    public void setBytes(byte[] bytes) {
-        this.bytes = bytes;
-    }
 }

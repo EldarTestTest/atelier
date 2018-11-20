@@ -1,5 +1,8 @@
 package com.dreamteam.atelier.model.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -15,6 +18,9 @@ import java.util.UUID;
  */
 @Document(collection = "baskets")
 @TypeAlias(value = "basket")
+@Data
+@EqualsAndHashCode
+@RequiredArgsConstructor
 public class Basket {
 
     @Id
@@ -24,29 +30,6 @@ public class Basket {
     @DBRef
     private List<Item> items;
     private Integer price;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public List<Item> getItems() {
-        if (items == null) {
-            items = new ArrayList<>();
-        }
-        return items;
-    }
 
     public void addItem(Item item){
         if (items == null) {
@@ -60,17 +43,5 @@ public class Basket {
             return;
         }
         items.remove(item);
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
     }
 }

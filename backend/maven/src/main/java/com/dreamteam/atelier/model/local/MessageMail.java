@@ -1,11 +1,10 @@
 package com.dreamteam.atelier.model.local;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
-@Getter
-@Setter
+@EnableWebSecurity
+@RequiredArgsConstructor
 @Data
 public class MessageMail {
 

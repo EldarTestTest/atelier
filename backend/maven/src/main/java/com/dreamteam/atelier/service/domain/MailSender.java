@@ -1,4 +1,4 @@
-package com.dreamteam.atelier.service;
+package com.dreamteam.atelier.service.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

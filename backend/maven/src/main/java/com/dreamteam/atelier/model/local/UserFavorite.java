@@ -1,13 +1,15 @@
 package com.dreamteam.atelier.model.local;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.UUID;
 
-@Getter
-@Setter
+@Data
+@RequiredArgsConstructor
+@EqualsAndHashCode
 public class UserFavorite {
 
     private String id;

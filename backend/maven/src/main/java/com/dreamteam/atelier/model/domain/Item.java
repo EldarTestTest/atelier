@@ -1,5 +1,8 @@
 package com.dreamteam.atelier.model.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -18,6 +21,9 @@ import java.util.UUID;
  */
 @Document(collection = "items")
 @TypeAlias(value = "item")
+@Data
+@EqualsAndHashCode
+@RequiredArgsConstructor
 public class Item {
 
     @Id
@@ -39,49 +45,6 @@ public class Item {
     @DBRef
     private Season season;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<CommonFile> getCommonFiles() {
-        if (commonFiles == null) {
-            commonFiles = new ArrayList<>();
-        }
-        return commonFiles;
-    }
-
-    public void setCommonFiles(List<CommonFile> commonFiles) {
-        this.commonFiles = commonFiles;
-    }
-
     public void addCommonFile(CommonFile commonFile) {
         if (commonFiles == null) {
             commonFiles = new ArrayList<>();
@@ -93,17 +56,6 @@ public class Item {
         if (commonFiles != null) {
             commonFiles.remove(commonFile);
         }
-    }
-
-    public List<String> getDimensions() {
-        if (dimensions == null) {
-            dimensions = new ArrayList<>();
-        }
-        return dimensions;
-    }
-
-    public void setDimensions(List<String> dimensions) {
-        this.dimensions = dimensions;
     }
 
     public void addDimensions(String dimension) {
@@ -119,38 +71,6 @@ public class Item {
         }
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public LocalDateTime getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(LocalDateTime createDate) {
-        this.createDate = createDate;
-    }
-
-    public Integer getSale() {
-        return sale;
-    }
-
-    public void setSale(Integer sale) {
-        this.sale = sale;
-    }
-
-    public List<ItemCategory> getItemCategory() {
-        return itemCategory;
-    }
-
-    public void setItemCategory(List<ItemCategory> itemCategory) {
-        this.itemCategory = itemCategory;
-    }
-
     public void addItemCategory(ItemCategory itemCat) {
         if (itemCategory == null) {
             itemCategory = new ArrayList<>();
@@ -162,14 +82,6 @@ public class Item {
         if (itemCategory != null) {
             itemCategory.remove(itemCat);
         }
-    }
-
-    public List<ItemType> getItemType() {
-        return itemType;
-    }
-
-    public void setItemType(List<ItemType> itemType) {
-        this.itemType = itemType;
     }
 
     public void addItemType(ItemType itemTyp) {
@@ -185,11 +97,4 @@ public class Item {
         }
     }
 
-    public Season getSeason() {
-        return season;
-    }
-
-    public void setSeason(Season season) {
-        this.season = season;
-    }
 }

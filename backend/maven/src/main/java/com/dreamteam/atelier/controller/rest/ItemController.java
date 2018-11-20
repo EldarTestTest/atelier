@@ -5,7 +5,7 @@ import com.dreamteam.atelier.model.domain.Item;
 import com.dreamteam.atelier.model.domain.ItemCategory;
 import com.dreamteam.atelier.model.domain.ItemType;
 import com.dreamteam.atelier.model.local.Product;
-import com.dreamteam.atelier.service.ItemService;
+import com.dreamteam.atelier.service.domain.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.dreamteam.atelier.service;
+package com.dreamteam.atelier.service.domain;
 
 import com.dreamteam.atelier.model.domain.CommonFile;
 import com.dreamteam.atelier.model.local.SystemFile;

@@ -1,5 +1,8 @@
 package com.dreamteam.atelier.model.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -14,6 +17,9 @@ import java.util.UUID;
  */
 @Document(collection = "top")
 @TypeAlias(value = "top")
+@Data
+@EqualsAndHashCode
+@RequiredArgsConstructor
 public class Top {
 
     @Id
@@ -26,43 +32,4 @@ public class Top {
     @DBRef
     private User user; //пользователь
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public Integer getValue() {
-        return value;
-    }
-
-    public void setValue(Integer value) {
-        this.value = value;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

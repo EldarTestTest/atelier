@@ -2,7 +2,7 @@ package com.dreamteam.atelier.controller.rest;
 
 import com.dreamteam.atelier.model.domain.Basket;
 import com.dreamteam.atelier.model.local.UserBasket;
-import com.dreamteam.atelier.service.BasketService;
+import com.dreamteam.atelier.service.domain.BasketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

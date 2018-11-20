@@ -1,4 +1,4 @@
-package com.dreamteam.atelier.service;
+package com.dreamteam.atelier.service.domain;
 
 import com.dreamteam.atelier.model.domain.Item;
 import com.dreamteam.atelier.model.domain.Top;

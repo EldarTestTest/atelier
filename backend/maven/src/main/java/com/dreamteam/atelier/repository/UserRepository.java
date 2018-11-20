@@ -5,6 +5,7 @@ import com.dreamteam.atelier.model.domain.UserAddress;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface UserRepository extends MongoRepository<User, String> {
@@ -17,7 +18,7 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     User findUserByEmail(String email);
 
-    User findUserByLogin(String login);
+    Optional<User> findUserByLogin(String login);
 
     User findUserByNikname(String nikname);
 

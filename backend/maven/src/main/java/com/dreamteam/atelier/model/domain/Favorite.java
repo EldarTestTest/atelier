@@ -1,5 +1,8 @@
 package com.dreamteam.atelier.model.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -16,6 +19,9 @@ import java.util.UUID;
  */
 @Document(collection = "favorites")
 @TypeAlias(value = "favorite")
+@Data
+@EqualsAndHashCode
+@RequiredArgsConstructor
 public class Favorite {
 
     @Id
@@ -24,29 +30,6 @@ public class Favorite {
     private UUID uuid;
     @DBRef
     private List<Item> items;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public List<Item> getItems() {
-        if (items == null) {
-            items = new ArrayList<>();
-        }
-        return items;
-    }
 
     public void addItem(Item item) {
         if (items == null) {
@@ -61,7 +44,4 @@ public class Favorite {
         }
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
 }

@@ -11,13 +11,13 @@
                                         <img :src="avatar">
                                     </v-avatar>
                                 </v-flex>
-                                <v-flex md15 lg5 xl15>
-                                    <h3 class="headline mb-2">{{`${this.lastName} ${this.firstName} ${this.middleName}
-                                        `}}</h3>
-                                    <!--<h3 class="headline mb-2">{{this.lastName}}</h3>-->
-                                    <!--<h3 class="headline mb-2">{{this.firstName}}</h3>-->
-                                    <!--<h3 class="headline mb-2">{{this.middleName}}</h3>-->
+                                <v-layout align-start>
+                                <v-flex md15 lg5 xl15 align-start>
+
+                                        <h3 class="headline mb-2">{{`${this.lastName} ${this.firstName}
+                                            ${this.middleName}`}}</h3>
                                 </v-flex>
+            </v-layout>
                             </v-layout>
                         </v-container>
                     </v-card>
