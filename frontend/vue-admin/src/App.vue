@@ -5,5 +5,19 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        data(){
+            return {
+                a: 5
+            }
+        },
+        methods: {
+
+        },
+        computed: {
+            getA(){
+                return this.a;
+            }
+        }
+    }
 </script>

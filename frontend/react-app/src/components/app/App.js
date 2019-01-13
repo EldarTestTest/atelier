@@ -5,6 +5,7 @@ class App extends Component {
   render() {
     return (
       <div>
+          {this.state}
           <h1>Hello world!</h1>
       </div>
     );

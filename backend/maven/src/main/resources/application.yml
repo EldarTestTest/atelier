@@ -31,7 +31,9 @@ spring:
         registration:
           uaa:
             client-id:
-
+  jackson:
+    date-format: dd.MM.yyyy HH:mm:ss
+    time-zone: GMT+4
 
 
 ---
@@ -49,3 +51,6 @@ spring:
     password: qwertyqwerty
     port: 465
     protocol: smtps
+  jackson:
+    date-format: dd.MM.yyyy HH:mm:ss
+    time-zone: GMT+4
